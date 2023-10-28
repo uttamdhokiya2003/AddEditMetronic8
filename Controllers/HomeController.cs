@@ -1,9 +1,11 @@
 ﻿using AddEditMetronic8.Models;
+using MetronicAddressBook.BAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace AddEditMetronic8.Controllers
 {
+    [CheckAccess]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

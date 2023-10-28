@@ -1,11 +1,13 @@
 ﻿using AddEditMetronic8.Areas.LOC_Country.Models;
 using AddEditMetronic8.DAL;
+using MetronicAddressBook.BAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Diagnostics.Metrics;
 
 namespace AddEditMetronic8.Areas.LOC_Country.Controllers
 {
+    [CheckAccess]
     [Area("LOC_Country")]
     [Route("[Controller]/[action]")]
     public class LOC_CountryController : Controller
