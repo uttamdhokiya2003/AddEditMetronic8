@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AddEditMetronic8
+build_property.RootNamespace = AddEditMetronic8
+build_property.ProjectDir = C:\Users\mayur\source\repos\AddEditMetronic8\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mayur\source\repos\AddEditMetronic8
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_City/Views/LOC_City/LOC_CityAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcTE9DX0NpdHlcTE9DX0NpdHlBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_City/Views/LOC_City/LOC_CityList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcTE9DX0NpdHlcTE9DX0NpdHlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_City/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_Country/Views/LOC_Country/LOC_CountryAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NvdW50cnlcVmlld3NcTE9DX0NvdW50cnlcTE9DX0NvdW50cnlBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_Country/Views/LOC_Country/LOC_CountryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NvdW50cnlcVmlld3NcTE9DX0NvdW50cnlcTE9DX0NvdW50cnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_Country/Views/Shared/_FilterCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NvdW50cnlcVmlld3NcU2hhcmVkXF9GaWx0ZXJDb3VudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_Country/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NvdW50cnlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_State/Views/LOC_State/LOC_StateAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX1N0YXRlXFZpZXdzXExPQ19TdGF0ZVxMT0NfU3RhdGVBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_State/Views/LOC_State/LOC_StateList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX1N0YXRlXFZpZXdzXExPQ19TdGF0ZVxMT0NfU3RhdGVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_State/Views/Shared/_FilterState.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX1N0YXRlXFZpZXdzXFNoYXJlZFxfRmlsdGVyU3RhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/LOC_State/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX1N0YXRlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/SEC_User/Views/SEC_User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcU0VDX1VzZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Areas/SEC_User/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/Shared/_Login_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbl9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/AddEditMetronic8/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hdmpmi1gj0

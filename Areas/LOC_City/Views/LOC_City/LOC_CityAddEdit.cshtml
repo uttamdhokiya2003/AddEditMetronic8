@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "LOC_CityAddEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using System.Data;
+
+@model AddEditMetronic8.Areas.LOC_City.Models.LOC_CityModel
+
+<div class="pagetitle">
+    <div><h1>City Add Edit</h1></div>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="EMP_Employee" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="LOC_City" asp-action="SelectAll">City</a></li>
+            <li class="breadcrumb-item">City Add Edit</li>
+
+        </ol>
+    </nav>
+
+</div><!-- End Page Title -->
+
+<div class="container">
+    <div class="fs-2">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="card">
+            <div class="card-body">
+                <h3> City AddEdit</h3>
+
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div class="container-fluid">
+                    <h3>@TempData["CityInsertMsg"]</h3>
+                    <form method="post" asp-controller="LOC_City" asp-action="Save">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        @Html.HiddenFor(x=>x.CityID)
+                        <div class="row">
+                        <div class="col-lg-6">
+                            <div class="fw-bold"><label class="col-sm-4 col-form-label" asp-for="CountryID"><span class="text-danger fw-bold">*</span>Country Name</label></div>
+                            <select class="form-control" asp-for="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))" onchange="functionOnStateChange();">
+                                <option value="">Select Country</option>
+                            </select>
+                            <span class="text-danger" asp-validation-for="CountryID"></span>
+                        </div>
+                            <div class="col-lg-6">
+                            <div class="fw-bold"><label class="col-sm-4 col-form-label" asp-for="StateID"><span class="text-danger fw-bold">*</span>State Name</label></div>
+                            <select class="form-control" asp-for="StateID" asp-items="@(new SelectList(ViewBag.StateList,"StateID","StateName"))">
+                                <option value="">Select State</option>
+                            </select>
+                            <span class="text-danger" asp-validation-for="CountryID"></span>
+                        </div>
+                        </div>
+                        <div class="row-mb-3">
+                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="CityName"><span class="text-danger fw-bold">*</span>City Name</label></div>
+                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="CityName" autocomplete="off" /></div>
+                            <span class="text-danger" asp-validation-for="CityName"></span>
+                        </div>
+
+
+
+
+                        <br /><hr />
+                        <div class="text-left">
+                            <button type="submit" class="btn btn-success" value="Submit">Submit</button>
+                            <a class="btn btn-secondary" asp-controller="LOC_City" asp-action="SelectAll">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        function functionOnStateChange() {
+            var CountryID = $("#CountryID").val();
+
+            if (CountryID !== "") {
+                $("#StateID").empty();
+                $("#StateID").append($("<option></option>").val("").html("Select State"));
+                $.ajax(
+                    {
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "@Url.Action("DropDownByCountry","LOC_City")" + "?&CountryID=" + CountryID,
+                        data: {},
+                        dataType: "json",
+                        success: function (Result) {
+                            $.each(Result, function (key, value) {
+                                $("#StateID").append($("<option></option>").val(value.stateID).html(value.stateName));
+                            });
+                        },
+                        error: function (err) {
+                            alert("Error While Running AJAX");
+                        }
+                    }
+                )
+            }
+            else {
+                $("#StateID").empty();
+                $("#StateID").append($("<option></option>").val("").html("Select State"));
+            }
+
+        }
+    </script>
+}

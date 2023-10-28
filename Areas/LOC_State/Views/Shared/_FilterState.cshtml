@@ -1,0 +1,26 @@
+﻿@model AddEditMetronic8.Areas.LOC_State.Models.LOC_StateModel
+
+<div class="row">
+    <div class="justify-content-evenly">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <select class="form-control" name="CountryID" asp-for="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))">
+                        <option value="">Select Country</option>
+                    </select>
+
+
+                    <span class="text-danger"></span>
+                    @* <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name"> *@
+                </div>
+                <div class="col-md-4">
+                    <input type="search" name="StateName" asp-for="StateName" class="form-control" placeholder="Enter State Name">
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-dark mx-auto" asp-controller="LOC_State" asp-action="SelectAll">Search</button>
+                    <a class="btn btn-light" asp-controller="LOC_State" asp-action="SelectAll">Clear Filter</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

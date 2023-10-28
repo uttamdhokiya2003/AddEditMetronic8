@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AddEditMetronic8.props" />
+</Project>
