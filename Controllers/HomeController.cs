@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace AddEditMetronic8.Controllers
 {
-    [CheckAccess]
+    //[CheckAccess]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
