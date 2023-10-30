@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IWUqgZrVrHRXcfRcBC91U2K+1h+Wbm557QxdhYzyXQs=",
+  "Hash": "BvFQEtunjUgRqVOCZ3fIM9puckToEOlkJwsZGY82Nzc=",
   "Source": "AddEditMetronic8",
   "BasePath": "_content/AddEditMetronic8",
   "Mode": "Default",
@@ -20007,6 +20007,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Theme\\dist\\assets\\media\\logos\\mail.svg"
+    },
+    {
+      "Identity": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\Theme\\dist\\assets\\media\\logos\\Talkmore.svg",
+      "SourceId": "AddEditMetronic8",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\",
+      "BasePath": "_content/AddEditMetronic8",
+      "RelativePath": "Theme/dist/assets/media/logos/Talkmore.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Theme\\dist\\assets\\media\\logos\\Talkmore.svg"
     },
     {
       "Identity": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\Theme\\dist\\assets\\media\\misc\\auth-bg.png",

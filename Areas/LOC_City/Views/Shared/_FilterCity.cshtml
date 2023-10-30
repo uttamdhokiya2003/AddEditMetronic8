@@ -1,0 +1,46 @@
+﻿@model AddEditMetronic8.Areas.LOC_City.Models.LOC_CityModel
+
+<div class="row">
+    <div class="col-md-11"><h3>City List</h3></div>
+    <div class="col-md-1"><form method="post" asp-controller="LOC_City" asp-action="Add"><button type="submit" class="btn btn-success">Add</button></form></div>
+</div>
+<br />
+
+<div class="row">
+    <div class="justify-content-evenly">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <select class="form-control" name="CountryID" asp-for="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))" onchange="functionOnStateChange();">
+                        <option value="">Select Country</option>
+                    </select>
+
+                    <div></div>
+
+                    <span class="text-danger"></span>
+                    @* <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name"> *@
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="StateID" asp-items="@(new SelectList(ViewBag.StateList,"StateID","StateName"))">
+                        <option value="">Select State</option>
+                    </select>
+
+
+                    <span class="text-danger"></span>
+                    @* <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name"> *@
+                </div>
+                <div class="col-md-4">
+                    <input type="search" name="CityName" class="form-control" placeholder="Enter City Name">
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-dark mx-auto" asp-controller="LOC_City" asp-action="SelectAll">Search</button>
+                    <a class="btn btn-light" asp-controller="LOC_City" asp-action="SelectAll">Clear Filter</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<hr />

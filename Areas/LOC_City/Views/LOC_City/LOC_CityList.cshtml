@@ -4,8 +4,10 @@
 }
 
 
-@using System.Data;
-@model DataTable
+@using AddEditMetronic8.Areas.LOC_City.Models;
+
+@model AddEditMetronic8.Areas.LOC_City.Models.LOC_CityModel
+
 <div class="pagetitle">
     <div><h1>City List</h1></div>
     <nav>
@@ -23,49 +25,8 @@
 
             <div class="card responsive">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-11"><h3>City List</h3></div>
-                        <div class="col-md-1"><form method="post" asp-controller="LOC_City" asp-action="Add"><button type="submit" class="btn btn-success">Add</button></form></div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="justify-content-evenly">
-                            <form method="post">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <select class="form-control" name="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))" onchange="functionOnStateChange();">
-                                            <option value="">Select Country</option>
-                                        </select>
 
-                                        <div></div>
-
-                                        <span class="text-danger"></span>
-                                        @* <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name"> *@
-                                    </div>
-                                    <div class="col-md-4">
-                                        <select class="form-control" name="StateID" asp-items="@(new SelectList(ViewBag.StateList,"StateID","StateName"))">
-                                            <option value="">Select State</option>
-                                        </select>
-
-
-                                        <span class="text-danger"></span>
-                                        @* <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name"> *@
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="search" name="CityName" class="form-control" placeholder="Enter City Name">
-                                    </div>
-                                </div>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn btn-dark mx-auto" asp-controller="LOC_City" asp-action="SelectAll">Search</button>
-                                        <a class="btn btn-light" asp-controller="LOC_City" asp-action="SelectAll">Clear Filter</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <hr />
+                    <partial name="_FilterCity" />
                     <!-- Table with stripped rows -->
                     <table class="table datatable text-center">
                         <thead>
@@ -80,20 +41,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (DataRow dr in Model.Rows)
-                            {
+                          
+                                @foreach (LOC_CityModel dr in ViewBag.City)
+                                {
                                 <tr>
-                                    <td scope="row">@dr["CityID"]</td>
-                                    <td scope="col">@dr["CountryName"]</td>
-                                    <td scope="col">@dr["StateName"]</td>
-                                    <td scope="col">@dr["CityName"]</td>
-                                    <td scope="col">@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
-                                    <td scope="col">@Convert.ToDateTime(@dr["Modified"]).ToString("dd-MM-yyyy")</td>
+                                    <td scope="row">@dr.CityID</td>
+                                    <td scope="col">@dr.CountryName</td>
+                                    <td scope="col">@dr.StateName</td>
+                                    <td scope="col">@dr.CityName</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr.Created).ToString("dd-MM-yyyy")</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr.Modified).ToString("dd-MM-yyyy")</td>
                                     <td scope="col">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <form method="post" asp-controller="LOC_City" asp-action="Add" asp-route-cityid="@(Convert.ToInt32(dr["CityID"]))">
-                                                    <input type="hidden" name="CityID" value="@Convert.ToInt32(dr["CityID"])" />
+                                                <form method="post" asp-controller="LOC_City" asp-action="Add" asp-route-cityid="@(Convert.ToInt32(dr.CityID))">
+                                                    <input type="hidden" name="CityID" value="@Convert.ToInt32(dr.CityID)" />
                                                     <button type="submit" class="btn btn-secondary ">
 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
@@ -104,7 +66,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <form method="post" asp-controller="LOC_City" asp-action="Delete">
-                                                    <input type="hidden" name="CityID" value="@Convert.ToInt32(dr["CityID"])" />
+                                                    <input type="hidden" name="CityID" value="@Convert.ToInt32(dr.CityID)" />
                                                     <button onclick="return fun1()" type="submit" class="btn btn-danger">
 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

@@ -45,7 +45,20 @@ namespace AddEditMetronic8.Areas.LOC_City.Controllers
             #endregion
 
             DataTable dt = dalLOC.dbo_PR_LOC_City_SelectAll(modelLOC_City);
-            return View("LOC_CityList", dt);
+            List<LOC_CityModel> City = new List<LOC_CityModel>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                LOC_CityModel CityModel = new LOC_CityModel();
+                CityModel.CountryName = dr["CountryName"].ToString();
+                CityModel.StateName = dr["StateName"].ToString();
+                CityModel.CityName = dr["CityName"].ToString();
+                CityModel.CityID = Convert.ToInt32(dr["CityID"]);
+                CityModel.Created = Convert.ToDateTime(dr["Created"]);
+                CityModel.Modified = Convert.ToDateTime(dr["Modified"]);
+                City.Add(CityModel);
+            }
+            ViewBag.City = City;
+            return View("LOC_CityList");
         }
         #endregion
 

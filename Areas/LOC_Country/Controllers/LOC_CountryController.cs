@@ -112,6 +112,27 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
             ViewBag.Country = Country;
             return View("LOC_CountryList");
         }
-        #endregion
-    }
+		#endregion
+
+
+		#region Function: Delete Multiple
+		[HttpPost]
+		public IActionResult DeleteMultiple(int[] Ids)
+		{
+			string result = string.Empty;
+			if (Ids.Count() > 0)
+			{
+				foreach (int id in Ids)
+				{
+					dalLOC.dbo_PR_LOC_Country_Delete(id);
+				}
+				TempData["success"] = "Records deleted successfully.";
+				result = "success";
+			}
+			return new JsonResult(result);
+		}
+		#endregion
+
+
+	}
 }

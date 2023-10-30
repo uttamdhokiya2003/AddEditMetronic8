@@ -6,6 +6,7 @@ using AddEditMetronic8.DAL;
 using System.Data;
 using System.Data.Common;
 using System.Runtime.Intrinsics.Arm;
+using AddEditMetronic8.BAL;
 
 namespace AddEditMetronic8.DAL
 {
@@ -19,8 +20,9 @@ namespace AddEditMetronic8.DAL
             {
                 SqlDatabase sqlDB=new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_LOC_Country_SelectAll");
+				sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
-                DataTable dt=new DataTable();
+				DataTable dt=new DataTable();
                 using (IDataReader dr = sqlDB.ExecuteReader(dbCMD))
                 {
                     dt.Load(dr);
