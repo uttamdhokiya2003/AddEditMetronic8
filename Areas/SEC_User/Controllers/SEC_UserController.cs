@@ -10,22 +10,20 @@ namespace AddEditMetronic8.Areas.SEC_User.Controllers
 
 	public class SEC_UserController : Controller
 	{
-		private IConfiguration Configuration;
-		public SEC_UserController(IConfiguration _configuration)
-		{
-			Configuration = _configuration;
-		}
+		SEC_DAL dalSEC = new SEC_DAL();
 
-		public IActionResult Index()
+
+        #region Index
+        public IActionResult Index()
 		{
 			return View();
 		}
+        #endregion
 
-		#region LogIn
-		[HttpPost]
+        #region LogIn
+        [HttpPost]
 		public IActionResult Login(SEC_UserModel modelSEC_User)
 		{
-			string connstr = this.Configuration.GetConnectionString("myConnectionString");
 			string error1 = null;
 			string error2 = null;
 			if (modelSEC_User.UserName == null)
@@ -56,7 +54,7 @@ namespace AddEditMetronic8.Areas.SEC_User.Controllers
 						HttpContext.Session.SetString("Password", dr["Password"].ToString());
 						HttpContext.Session.SetString("FirstName", dr["FirstName"].ToString());
 						HttpContext.Session.SetString("LastName", dr["LastName"].ToString());
-						HttpContext.Session.SetString("LastName", dr["EmailAddress"].ToString());
+						HttpContext.Session.SetString("EmailAddress", dr["EmailAddress"].ToString());
 
 						break;
 					}
@@ -67,18 +65,47 @@ namespace AddEditMetronic8.Areas.SEC_User.Controllers
 					return RedirectToAction("Index");
 				}
 				if (HttpContext.Session.GetString("UserName") != null && HttpContext.Session.GetString("Password") != null)
-				{
-					return RedirectToAction("Index", "Home");
+                {
+                    TempData["success"] = "Sign in Successfully ! ";
+
+                    return RedirectToAction("Index", "Home");
 				}
 			}
 			return RedirectToAction("Index");
 		}
+        #endregion
+
+		public IActionResult SignUp()
+		{
+			return View();
+		}
+		#region Function: Signup Save
+		[HttpPost]
+		public IActionResult SignUpSave(SEC_UserModel modelSEC_User)
+		{
+			//string hashedPassword = HashPassword(modelSEC_User.Password); // Hash the password
+			//modelSEC_User.Password = hashedPassword; // Update the model with the hashed password
+
+			if (Convert.ToBoolean(dalSEC.dbo_PR_SEC_User_Insert(modelSEC_User)))
+			{
+				TempData["SignUpSuccess"] = "Sign up Successfully";
+				return RedirectToAction("Index");
+			}
+			else
+			{
+				TempData["SignUpError"] = "Username already Exists";
+				return RedirectToAction("SignUp");
+
+			}
+		}
 		#endregion
 
+		#region Logout
 		public IActionResult Logout()
 		{
 			HttpContext.Session.Clear();
 			return RedirectToAction("Index");
 		}
-	}
+        #endregion
+    }
 }

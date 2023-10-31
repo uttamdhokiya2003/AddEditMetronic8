@@ -7,18 +7,6 @@
 @using System.Data;
 
 @model AddEditMetronic8.Areas.LOC_Country.Models.LOC_CountryModel
-<div class="pagetitle">
-    <div><h1>Country Add Edit</h1></div>
-    <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="EMP_Employee" asp-action="Index">Home</a></li>
-            <li class="breadcrumb-item"><a asp-controller="LOC_Country" asp-action="SelectAll">Country</a></li>
-            <li class="breadcrumb-item">Country Add Edit</li>
-
-        </ol>
-    </nav>
-
-</div><!-- End Page Title -->
 
 <div class="container">
     <div class="fs-2">
@@ -29,7 +17,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h3> LOC_Country AddEdit</h3>
+                <h3> Country Add Edit</h3>
 
                 <div asp-validation-summary="ModelOnly"></div>
 
@@ -41,7 +29,7 @@
 
                         <div class="row-mb-3">
                             <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="CountryName"><span class="text-danger fw-bold">*</span>Country Name</label></div>
-                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="CountryName" autocomplete="off" /></div>
+                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="CountryName" autocomplete="off" placeholder="Enter Country Name" /></div>
                             <span class="text-danger" asp-validation-for="CountryName"></span>
                         </div>
 

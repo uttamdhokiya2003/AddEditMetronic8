@@ -39,6 +39,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         public IActionResult Delete(int CountryID)
         {
             DataTable dt = dalLOC.dbo_PR_LOC_Country_Delete(CountryID);
+            TempData["success"] = "Record Delete Successfully ! ";
 
             //return View("EMP_EmployeeList");
             return RedirectToAction("SelectAll");
@@ -76,7 +77,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
                 #region Insert
                 DataTable dt = dalLOC.dbo_PR_LOC_Country_Insert(modelLOC_Country);
 
-                TempData["CountryInsertMsg"] = "Record Inserted Successfully ! ";
+                TempData["success"] = "Record Inserted Successfully ! ";
                 #endregion
             }
             else
@@ -84,11 +85,11 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
                 #region Update
                 DataTable dt = dalLOC.dbo_PR_LOC_Country_Update(modelLOC_Country);
 
-                TempData["CountryInsertMsg"] = "Record Updated Successfully ! ";
+                TempData["success"] = "Record Updated Successfully ! ";
                 #endregion
             }
 
-            return RedirectToAction("ADD");
+            return RedirectToAction("SelectAll");
             //return View("LOC_CountryAddEdit");
         }
         #endregion
@@ -114,7 +115,6 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         }
 		#endregion
 
-
 		#region Function: Delete Multiple
 		[HttpPost]
 		public IActionResult DeleteMultiple(int[] Ids)
@@ -126,7 +126,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
 				{
 					dalLOC.dbo_PR_LOC_Country_Delete(id);
 				}
-				TempData["success"] = "Records deleted successfully.";
+				TempData["success"] = "Records Deleted Successfully.";
 				result = "success";
 			}
 			return new JsonResult(result);

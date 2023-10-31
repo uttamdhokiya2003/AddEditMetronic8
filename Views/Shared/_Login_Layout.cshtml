@@ -25,7 +25,7 @@ License: For each use you must have a valid license purchased only from above li
 	<meta property="og:url" content="https://keenthemes.com/metronic" />
 	<meta property="og:site_name" content="Keenthemes | Metronic" />
 	<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-	<link rel="shortcut icon" href="Theme/dist/assets/media/logos/favicon.ico" />
+	<link rel="shortcut icon" href="Theme/dist/assets/media/logos/DarshanUMS_Icon_1.svg" />
 	<!--begin::Fonts-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 	<!--end::Fonts-->
@@ -45,12 +45,22 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Page bg image-->
 		<style>
 			body {
+				
 				background-image: url('Theme/dist/assets/media/auth/bg4.jpg');
 			}
 
 			[data-theme="dark"] body {
 				background-image: url('Theme/dist/assets/media/auth/bg4-dark.jpg');
-			}</style>
+			}
+
+			.logo {
+				background-image: url('Theme/dist/assets/media/logos/Talkmore.svg');
+			}
+
+			[data-theme="dark"] logo {
+				background-image: url('Theme/dist/assets/media/logos/Talkmore-Dark.svg');
+			}
+			</style>
 		<!--end::Page bg image-->
 		<!--begin::Authentication - Sign-in -->
 		<div class="d-flex flex-column flex-column-fluid flex-lg-row">
@@ -60,7 +70,8 @@ License: For each use you must have a valid license purchased only from above li
 				<div class="d-flex flex-column" style="padding-top:140px;">
 					<!--begin::Logo-->
 					<a asp-controller="SEC_User" asp-action="Index" >
-						<img alt="Logo" src="Theme/dist/assets/media/logos/Talkmore.svg" />
+
+						<img alt="Logo" name="logo" src="Theme/dist/assets/media/logos/Talkmore.svg" />
 					</a>
 					<!--end::Logo-->
 					<!--begin::Title-->
@@ -86,6 +97,7 @@ License: For each use you must have a valid license purchased only from above li
 	<script src="Theme/dist/assets/js/custom/authentication/sign-in/general.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 <!--end::Body-->
 </html>
