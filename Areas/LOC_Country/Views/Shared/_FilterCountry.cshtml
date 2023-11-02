@@ -1,69 +1,70 @@
 ﻿@model AddEditMetronic8.Areas.LOC_Country.Models.LOC_CountryModel
 
-
-@* <form method="post" asp-controller="LOC_Country" asp-action="Search">
-    <div class="row">
-        <div class="col-4">
-            <input type="search" name="CountryName" asp-for="CountryName" class="form-control" placeholder="Country Name">
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <button type="submit" class="btn btn-primary fw-bold">Search</button>
-        <a class="btn btn-secondary fw-bold" style="margin-left:7px" asp-controller="LOC_Country" asp-action="Cancel">Clear</a>
-    </div>
-</form> *@
 <!--begin::Main-->
 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-	<!--begin::Content wrapper-->
-	<div class="d-flex flex-column flex-column-fluid">
-		<!--begin::Content-->
-		<div id="kt_app_content" class="app-content flex-column-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div id="kt_app_content_container" class="app-container container-xxl">
-						<!--begin::Products-->
-						<div class="card card-flush">
-							<!--begin::Card header-->
-							<div class="card-header align-items-center py-5 gap-2 gap-md-5">
-								<!--begin::Card title-->
+    <!--begin::Content wrapper-->
+    <div class="d-flex flex-column flex-column-fluid">
+        <!--begin::Content-->
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="kt_app_content_container" class="app-container container-xxl">
+                        <!--begin::Products-->
+                        <div class="card card-flush">
+                      
+                             
 
-								<div class="col mt-3" style="font-family:'Bahnschrift';font-size:x-large">
-									<div class="row">
-										<div class="col-md-10">
-											<h3>Country List</h3>
-										</div>
-										<div class="col-md-2">
-											<a asp-controller="LOC_Country" asp-action="Add" class="btn btn-success">Add</a>
-										</div>
-									</div>
-									<hr />
+                            <!--begin::Card header-->
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                <!--begin::Card title-->
+                                <div class="col mt-3" style="font-family:'Bahnschrift';font-size:x-large">
+                                    <div class="fs-xxl text-dark "><h1>Country List</h1></div>
+                                    <!--begin::Title-->
+                                    <hr />
 
-									<div class="row">
-										<div class="justify-content-evenly">
-											<form method="post" asp-controller="LOC_Country" asp-action="Filter">
-												<div class="row">
-													<div class="col-md-6">
-														<input type="search" asp-for="CountryName" name="CountryName" class="form-control" placeholder="Enter Country Name">
-													</div>
-													<div class="col-md-1">
-														<button type="submit" class="btn btn-dark mx-auto" asp-controller="LOC_Country" asp-action="Filter">Search</button>
-													</div>
-													<div class="col-md-1">
-														<a class="btn btn-light" asp-controller="LOC_Country" asp-action="SelectAll">Clear</a>
-													</div>
-												</div>
-											</form>
-										</div>
-									</div>
+                                    <span>
+                                        <h3 class="fs-x text-dark mt-3 mb-6">
+                                            <svg style="position: relative;top:-3px;"
+                                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                            </svg>
+                                            SEARCH
+                                        </h3>
+                                    </span>
+                                    <!--end::Title-->
+                                    <div class="row">
+                                        <div class="justify-content-evenly">
+                                            <form method="post" asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="Filter">
+                                                <div class="d-flex row">
+                                                    <!--begin::Input group-->
+                                                    <div class="d-flex flex-column fv-row col-lg-4">
+                                                        <input type="search" class="form-control form-control-solid"
+                                                               name="CountryName"
+                                                               asp-for="CountryName" placeholder="Enter Country Name"
+                                                               autocomplete="off" />
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <div class="col-lg-4">
+                                                        <button type="submit" class="btn btn-dark mx-auto" asp-controller="LOC_Country" asp-action="Filter">Search</button>
 
-								</div>
+                                                        <a type="submit" class="btn btn-light me-3"
+                                                           asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="SelectAll">
+                                                            Clear
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

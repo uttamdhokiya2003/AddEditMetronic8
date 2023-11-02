@@ -8,18 +8,12 @@
 @model AddEditMetronic8.Areas.LOC_State.Models.LOC_StateModel
 
 
-
 <div class="mt-5">
-    <div class="row">
-        <div class="col-md-11"><h3>State List</h3></div>
-        <div class="col-md-1"><form method="post" asp-controller="LOC_State" asp-action="Add"><button type="submit" class="btn btn-success">Add</button></form></div>
-    </div>
-    <br />
+
 
     <partial name="_FilterState" />
-    <hr />
-    <!--begin::Main-->
-    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    
+
         <!--begin::Content wrapper-->
         <div class="d-flex flex-column flex-column-fluid">
 
@@ -55,7 +49,7 @@
 
 
                                     <!--begin::Add customer-->
-                                    <a class="btn btn-primary" asp-controller="LOC_Country" asp-action="Add">Add Country</a>
+                                    <a class="btn btn-primary" asp-controller="LOC_State" asp-action="Add">Add State</a>
                                     <!--end::Add customer-->
                                 </div>
                                 <!--end::Toolbar-->
@@ -74,7 +68,7 @@
                         <!--begin::Card body-->
                         <div class="card-body pt-0">
                             <!--begin::Table-->
-                            <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_customers_table">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
                                 <!--begin::Table head-->
                                 <thead>
                                     <!--begin::Table row-->
@@ -174,50 +168,14 @@
             <!--end::Content-->
         </div>
         <!--end::Content wrapper-->
-        <!--begin::Footer-->
-        <div id="kt_app_footer" class="app-footer">
-            <!--begin::Footer container-->
-            <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-                <!--begin::Copyright-->
-                <div class="text-dark order-2 order-md-1">
-                    <span class="text-muted fw-semibold me-1">2022©</span>
-                    <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
-                </div>
-                <!--end::Copyright-->
-                <!--begin::Menu-->
-                <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                    <li class="menu-item">
-                        <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-                    </li>
-                </ul>
-                <!--end::Menu-->
-            </div>
-            <!--end::Footer container-->
-        </div>
-        <!--end::Footer-->
+   
     </div>
-    <!--end:::Main-->
-</div>
 @section Scripts{
-    <!--begin::Javascript-->
-    <script>var hostUrl = "assets/";</script>
-    <!--begin::Global Javascript Bundle(used by all pages)-->
-    <script src="~/Theme/dist/assets/plugins/global/plugins.bundle.js"></script>
-    <script src="~/Theme/dist/assets/js/scripts.bundle.js"></script>
-    <!--end::Global Javascript Bundle-->
     <!--begin::Vendors Javascript(used by this page)-->
     <script src="~/Theme/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <!--end::Vendors Javascript-->
     <!--begin::Custom Javascript(used by this page)-->
-    <script src="~/Theme/dist/assets/js/custom/apps/ecommerce/customers/listing/listing.js"></script>
-    <script src="~/Theme/dist/assets/js/custom/apps/ecommerce/customers/listing/add.js"></script>
-    <script src="~/Theme/dist/assets/js/custom/apps/ecommerce/customers/listing/export.js"></script>
+    <script src="~/Theme/dist/assets/js/custom/apps/ecommerce/sales/listing.js"></script>
     <script src="~/Theme/dist/assets/js/widgets.bundle.js"></script>
     <script src="~/Theme/dist/assets/js/custom/widgets.js"></script>
     <script src="~/Theme/dist/assets/js/custom/apps/chat/chat.js"></script>
@@ -225,7 +183,6 @@
     <script src="~/Theme/dist/assets/js/custom/utilities/modals/create-app.js"></script>
     <script src="~/Theme/dist/assets/js/custom/utilities/modals/users-search.js"></script>
     <!--end::Custom Javascript-->
-    <!--end::Javascript-->
     <script>
         function fun1() {
             if (confirm("Are You Sure You Want To Delete?")) {
@@ -268,7 +225,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/LOC_Country/DeleteMultiple',
+                url: '/LOC_State/DeleteMultiple',
                 data: { 'Ids': val },
                 success: function (response) {
                     if (response == 'success') {

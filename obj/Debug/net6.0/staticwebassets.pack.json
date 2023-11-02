@@ -21117,6 +21117,26 @@
       "PackagePath": "staticwebassets\\Theme\\src\\sass\\vendors\\plugins\\mixins\\_nouislider.scss"
     },
     {
+      "Id": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\css\\DataTableCss\\jquery.dataTables.css",
+      "PackagePath": "staticwebassets\\css\\DataTableCss\\jquery.dataTables.css"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\css\\DataTableCss\\jquery.dataTables.min.css",
+      "PackagePath": "staticwebassets\\css\\DataTableCss\\jquery.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\js\\DataTablejs.js",
+      "PackagePath": "staticwebassets\\js\\DataTablejs.js"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
       "Id": "C:\\Users\\mayur\\source\\repos\\AddEditMetronic8\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
