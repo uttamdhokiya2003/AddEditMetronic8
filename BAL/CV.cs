@@ -33,6 +33,15 @@ namespace AddEditMetronic8.BAL
             }
             return UserID;
         }
+        public static string? Email()
+        {
+            string? Email = null;
 
+            if (_httpContextAccessor.HttpContext.Session.GetString("EmailAddress") != null)
+            {
+                Email = _httpContextAccessor.HttpContext.Session.GetString("EmailAddress").ToString();
+            }
+            return Email;
+        }
     }
 }

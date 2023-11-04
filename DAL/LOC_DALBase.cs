@@ -18,6 +18,7 @@ namespace AddEditMetronic8.DAL
         {
             try
             {
+
                 SqlDatabase sqlDB=new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_LOC_Country_SelectAll");
 				sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
