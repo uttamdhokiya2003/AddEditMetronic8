@@ -15,7 +15,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         LOC_DAL dalLOC = new LOC_DAL();
 
         #region SelectAll
-        public IActionResult SelectAll()
+        public IActionResult Index()
         {
             DataTable dt = dalLOC.dbo_PR_LOC_Country_SelectAll();
             List<LOC_CountryModel> Country = new List<LOC_CountryModel>();
@@ -42,7 +42,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
             TempData["success"] = "Record Delete Successfully ! ";
 
             //return View("EMP_EmployeeList");
-            return RedirectToAction("SelectAll");
+            return RedirectToAction("Index");
         }
         #endregion
 
@@ -89,7 +89,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
                 #endregion
             }
 
-            return RedirectToAction("SelectAll");
+            return RedirectToAction("Index");
             //return View("LOC_CountryAddEdit");
         }
         #endregion

@@ -1,11 +1,13 @@
 ﻿using AddEditMetronic8.Areas.LOC_Country.Models;
 using AddEditMetronic8.Areas.LOC_State.Models;
 using AddEditMetronic8.DAL;
+using MetronicAddressBook.BAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
 namespace AddEditMetronic8.Areas.LOC_State.Controllers
 {
+    [CheckAccess]
     [Area("LOC_State")]
     [Route("[Controller]/[action]")]
     public class LOC_StateController : Controller
@@ -13,7 +15,7 @@ namespace AddEditMetronic8.Areas.LOC_State.Controllers
         LOC_DAL dalLOC = new LOC_DAL();
 
         #region SelectAll
-        public IActionResult SelectAll(LOC_StateModel modelLOC_State)
+        public IActionResult Index(LOC_StateModel modelLOC_State)
         {
             #region Select For Country Dropdown
             DataTable dt1 = dalLOC.dbo_PR_LOC_Country_SelectByDropdown();
@@ -52,7 +54,7 @@ namespace AddEditMetronic8.Areas.LOC_State.Controllers
             DataTable dt = dalLOC.dbo_PR_LOC_State_Delete(StateID);
 
             //return View("EMP_EmployeeList");
-            return RedirectToAction("SelectAll");
+            return RedirectToAction("Index");
         }
         #endregion
 

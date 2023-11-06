@@ -168,11 +168,13 @@ namespace AddEditMetronic8.DAL
             {
                 SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_LOC_State_SelectAll");
+                sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
                 DataTable dt = new DataTable();
-                if (modelLOC_State.CountryID != null || modelLOC_State.StateName != null)
+                if (modelLOC_State.CountryID != null || modelLOC_State.StateName != null || modelLOC_State.UserID!= null)
                 {
                     dbCMD = sqlDB.GetStoredProcCommand("PR_LOC_State_SelectByCountryNameStateName");
+                    sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
                     if (modelLOC_State.CountryID != null)
                         sqlDB.AddInParameter(dbCMD, "CountryID", SqlDbType.Int, modelLOC_State.CountryID);
