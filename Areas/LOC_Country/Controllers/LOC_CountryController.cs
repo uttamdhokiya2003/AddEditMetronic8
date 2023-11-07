@@ -1,8 +1,10 @@
 ﻿using AddEditMetronic8.Areas.LOC_Country.Models;
+using AddEditMetronic8.BAL;
 using AddEditMetronic8.DAL;
 using MetronicAddressBook.BAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Diagnostics.Metrics;
 
 namespace AddEditMetronic8.Areas.LOC_Country.Controllers
@@ -47,11 +49,15 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         #endregion
 
         #region Add
-        public IActionResult Add(int? CountryID)
+        public IActionResult Add(string? CountryID)
         {
             if (CountryID != null)
             {
-                DataTable dt = dalLOC.dbo_PR_LOC_Country_SelectByPK(CountryID);
+
+                SqlInt32 decryptedID = CommonFunctions.DecryptBase64Int32(CountryID);
+                int id = decryptedID.Value;
+                TempData["Action"] = "Edit";
+                DataTable dt = dalLOC.dbo_PR_LOC_Country_SelectByPK(id);
 
                 LOC_CountryModel modelLOC_Country = new LOC_CountryModel();
 
@@ -70,25 +76,29 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
 
         #region Save
         [HttpPost]
-        public IActionResult Save(LOC_CountryModel modelLOC_Country)
+        public IActionResult Save(LOC_CountryModel modelLOC_Country,string CountryID)
         {
             if (modelLOC_Country.CountryID == null)
             {
-                #region Insert
-                DataTable dt = dalLOC.dbo_PR_LOC_Country_Insert(modelLOC_Country);
+                if (CountryID == null)
+                {
+                    #region Insert
+                    DataTable dt = dalLOC.dbo_PR_LOC_Country_Insert(modelLOC_Country);
 
-                TempData["success"] = "Record Inserted Successfully ! ";
-                #endregion
+                    TempData["success"] = "Record Inserted Successfully ! ";
+                    #endregion
+                }
+                else
+                {
+                    SqlInt32 decryptedID = CommonFunctions.DecryptBase64Int32(CountryID);
+                    int id = decryptedID.Value;
+                    #region Update
+                    DataTable dt = dalLOC.dbo_PR_LOC_Country_Update(modelLOC_Country,id);
+
+                    TempData["success"] = "Record Updated Successfully ! ";
+                    #endregion
+                }
             }
-            else
-            {
-                #region Update
-                DataTable dt = dalLOC.dbo_PR_LOC_Country_Update(modelLOC_Country);
-
-                TempData["success"] = "Record Updated Successfully ! ";
-                #endregion
-            }
-
             return RedirectToAction("Index");
             //return View("LOC_CountryAddEdit");
         }

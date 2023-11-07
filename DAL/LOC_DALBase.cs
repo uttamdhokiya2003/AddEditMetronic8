@@ -70,6 +70,7 @@ namespace AddEditMetronic8.DAL
                 SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_LOC_Country_Insert");
                 sqlDB.AddInParameter(dbCMD, "CountryName", SqlDbType.NVarChar, modelLOC_Country.CountryName);
+                sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
                 DataTable dt = new DataTable();
                 using (IDataReader dr = sqlDB.ExecuteReader(dbCMD))
@@ -87,14 +88,15 @@ namespace AddEditMetronic8.DAL
         #endregion
 
         #region dbo.PR_LOC_Country_Update
-        public DataTable dbo_PR_LOC_Country_Update(LOC_CountryModel modelLOC_Country)
+        public DataTable dbo_PR_LOC_Country_Update(LOC_CountryModel modelLOC_Country,int CountryID)
         {
             try
             {
                 SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_LOC_Country_Update");
-                sqlDB.AddInParameter(dbCMD, "CountryID ", SqlDbType.Int, modelLOC_Country.CountryID);
+                sqlDB.AddInParameter(dbCMD, "CountryID ", SqlDbType.Int,CountryID);
                 sqlDB.AddInParameter(dbCMD, "CountryName", SqlDbType.NVarChar, modelLOC_Country.CountryName);
+                sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
                 DataTable dt = new DataTable();
                 using (IDataReader dr = sqlDB.ExecuteReader(dbCMD))

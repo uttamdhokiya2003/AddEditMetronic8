@@ -5,6 +5,7 @@
 
 @using System.Data;
 @using AddEditMetronic8.Areas.LOC_Country.Models;
+@using AddEditMetronic8.BAL;
 @model AddEditMetronic8.Areas.LOC_Country.Models.LOC_CountryModel;
 
 <div class="mt-5" >
@@ -131,7 +132,7 @@
                                                 <a class="text-decoration-none text-hover-primary"
                                                    style="margin-right: 8px;" data-bs-toggle="tooltip"
                                                    data-bs-placement="left" data-bs-title="Edit"
-                                                   asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="Add" asp-route-CountryID="@dr.CountryID" >
+                                               asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="Add" asp-route-CountryID="@CommonFunctions.EncryptBase64(dr.CountryID.ToString())">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20"
                                                          height="20" fill="currentColor"
                                                          class="bi bi-pencil-square" viewBox="0 0 16 16">

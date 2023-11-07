@@ -7,7 +7,7 @@ namespace AddEditMetronic8.BAL
     public static class CV
     {
         private static IHttpContextAccessor _httpContextAccessor;
-
+        public static Boolean IsURLEncryption = true;
         static CV()
         {
             _httpContextAccessor = new HttpContextAccessor();
