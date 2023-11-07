@@ -38,9 +38,11 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         #endregion
 
         #region Delete
-        public IActionResult Delete(int CountryID)
+        public IActionResult Delete(string CountryID)
         {
-            DataTable dt = dalLOC.dbo_PR_LOC_Country_Delete(CountryID);
+            SqlInt32 decryptedID = CommonFunctions.DecryptBase64Int32(CountryID);
+            int id = decryptedID.Value;
+            DataTable dt = dalLOC.dbo_PR_LOC_Country_Delete(id);
             TempData["success"] = "Record Delete Successfully ! ";
 
             //return View("EMP_EmployeeList");
