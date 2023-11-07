@@ -144,7 +144,7 @@
                                                 <a class="text-decoration-none text-danger text-hover-danger"
                                                    data-bs-toggle="tooltip" data-bs-placement="right"
                                                    data-bs-title="Delete"
-                                                   asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="Delete" asp-route-CountryID="@dr.CountryID" onclick="return confirm('Are You sure delete it!!!')">
+                                               asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="Delete" asp-route-CountryID="@CommonFunctions.EncryptBase64(dr.CountryID.ToString())" onclick="return confirm('Are You sure delete it!!!')">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20"
                                                          height="20" fill="currentColor" class="bi bi-trash3"
                                                          viewBox="0 0 16 16">
