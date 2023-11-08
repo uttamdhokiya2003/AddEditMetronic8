@@ -501,8 +501,5 @@ namespace AddEditMetronic8.DAL
         }
         #endregion
         #endregion
-
-
-
     }
 }

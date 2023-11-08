@@ -8,12 +8,16 @@ namespace AddEditMetronic8.BAL
     {
         private static IHttpContextAccessor _httpContextAccessor;
         public static Boolean IsURLEncryption = true;
-        static CV()
+
+		#region CV
+		static CV()
         {
             _httpContextAccessor = new HttpContextAccessor();
         }
+		#endregion
 
-        public static string? UserName()
+		#region UserName
+		public static string? UserName()
         {
             string? UserName = null;
 
@@ -23,8 +27,10 @@ namespace AddEditMetronic8.BAL
             }
             return UserName;
         }
+		#endregion
 
-        public static int? UserID()
+		#region UserID
+		public static int? UserID()
         {
             int? UserID = null;
             if (_httpContextAccessor.HttpContext.Session.GetString("UserID") != null)
@@ -33,7 +39,10 @@ namespace AddEditMetronic8.BAL
             }
             return UserID;
         }
-        public static string? Email()
+		#endregion
+
+		#region Email
+		public static string? Email()
         {
             string? Email = null;
 
@@ -43,5 +52,6 @@ namespace AddEditMetronic8.BAL
             }
             return Email;
         }
-    }
+		#endregion
+	}
 }

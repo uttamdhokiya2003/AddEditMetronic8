@@ -20,8 +20,10 @@ namespace AddEditMetronic8.BAL
                 return password;
 
         }
-        #endregion
-        public static bool IsBase64Encoded(String str)
+		#endregion
+
+		#region IsBase64Encoded
+		public static bool IsBase64Encoded(String str)
         {
             try
             {
@@ -37,9 +39,10 @@ namespace AddEditMetronic8.BAL
                 return false;
             }
         }
+		#endregion
 
-        #region Decrypt
-        public static SqlInt32 DecryptBase64Int32(SqlString encryptpwd)
+		#region Decrypt
+		public static SqlInt32 DecryptBase64Int32(SqlString encryptpwd)
         {
             int n;
 
@@ -79,5 +82,6 @@ namespace AddEditMetronic8.BAL
 
         }
         #endregion
+
     }
 }

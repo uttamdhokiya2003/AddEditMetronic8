@@ -94,6 +94,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
                 {
                     SqlInt32 decryptedID = CommonFunctions.DecryptBase64Int32(CountryID);
                     int id = decryptedID.Value;
+
                     #region Update
                     DataTable dt = dalLOC.dbo_PR_LOC_Country_Update(modelLOC_Country,id);
 
@@ -106,7 +107,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         }
         #endregion
 
-        #region filter 
+        #region Filter 
         public IActionResult Filter(string CountryName)
         {
             DataTable dt = dalLOC.dbo_PR_LOC_Country_SelectByCountryName(CountryName);
@@ -127,7 +128,7 @@ namespace AddEditMetronic8.Areas.LOC_Country.Controllers
         }
 		#endregion
 
-		#region Function: Delete Multiple
+		#region Delete Multiple
 		[HttpPost]
 		public IActionResult DeleteMultiple(int[] Ids)
 		{

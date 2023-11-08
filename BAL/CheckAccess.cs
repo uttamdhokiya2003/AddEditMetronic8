@@ -5,7 +5,8 @@ namespace MetronicAddressBook.BAL
 {
     public class CheckAccess : ActionFilterAttribute, IAuthorizationFilter
     {
-        public void OnAuthorization(AuthorizationFilterContext filterContext)
+		#region OnAuthorization
+		public void OnAuthorization(AuthorizationFilterContext filterContext)
         {
             var rd = filterContext.RouteData;
             string currentAction = rd.Values["action"].ToString();
@@ -17,13 +18,16 @@ namespace MetronicAddressBook.BAL
                 filterContext.Result = new RedirectResult("~/SEC_User/Index");
             }
         }
+		#endregion
 
-        public override void OnResultExecuting(ResultExecutingContext filterContext)
+		#region OnResultExecuting
+		public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
             filterContext.HttpContext.Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
             filterContext.HttpContext.Response.Headers["Expires"] = "-1";
             filterContext.HttpContext.Response.Headers["Pragma"] = "no-cache";
             base.OnResultExecuting(filterContext);
         }
-    }
+		#endregion
+	}
 }
