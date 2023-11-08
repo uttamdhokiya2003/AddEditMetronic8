@@ -104,8 +104,10 @@ namespace AddEditMetronic8.Areas.LOC_City.Controllers
 
             #endregion
 
+            TempData["Action"] = "Add";
             if (CityID != null)
             {
+                @TempData["Action"] = "Edit";
                 DataTable dt = dalLOC.dbo_PR_LOC_City_SelectByPK(CityID);
 
                 LOC_CityModel modelLOC_City = new LOC_CityModel();

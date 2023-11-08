@@ -181,13 +181,13 @@ namespace AddEditMetronic8.DAL
                     if (modelLOC_State.CountryID != null)
                         sqlDB.AddInParameter(dbCMD, "CountryID", SqlDbType.Int, modelLOC_State.CountryID);
                     else
-                        sqlDB.AddInParameter(dbCMD, "CountryID", SqlDbType.Int, "");
+                        sqlDB.AddInParameter(dbCMD, "CountryID", SqlDbType.Int, DBNull.Value);
 
 
                     if (modelLOC_State.StateName != null)
                         sqlDB.AddInParameter(dbCMD, "StateName", SqlDbType.NVarChar, modelLOC_State.StateName);
                     else
-                        sqlDB.AddInParameter(dbCMD, "StateName", SqlDbType.NVarChar, "");
+                        sqlDB.AddInParameter(dbCMD, "StateName", SqlDbType.NVarChar, DBNull.Value);
 
                 }
                 using (IDataReader dr = sqlDB.ExecuteReader(dbCMD))
@@ -237,6 +237,7 @@ namespace AddEditMetronic8.DAL
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_LOC_State_Insert");
                 sqlDB.AddInParameter(dbCMD, "CountryID ", SqlDbType.Int, modelLOC_State.CountryID);
                 sqlDB.AddInParameter(dbCMD, "StateName", SqlDbType.NVarChar, modelLOC_State.StateName);
+                sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
                 DataTable dt = new DataTable();
                 using (IDataReader dr = sqlDB.ExecuteReader(dbCMD))
@@ -263,6 +264,7 @@ namespace AddEditMetronic8.DAL
                 sqlDB.AddInParameter(dbCMD, "StateID", SqlDbType.Int, modelLOC_State.StateID);
                 sqlDB.AddInParameter(dbCMD, "CountryID ", SqlDbType.Int, modelLOC_State.CountryID);
                 sqlDB.AddInParameter(dbCMD, "StateName", SqlDbType.NVarChar, modelLOC_State.StateName);
+                sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int, CV.UserID());
 
                 DataTable dt = new DataTable();
                 using (IDataReader dr = sqlDB.ExecuteReader(dbCMD))

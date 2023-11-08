@@ -73,12 +73,13 @@ namespace AddEditMetronic8.Areas.LOC_State.Controllers
             }
             ViewBag.CountryList = List;
 
-            #endregion
+			#endregion
 
-
-            if (StateID != null)
+			TempData["Action"] = "Add";
+			if (StateID != null)
             {
-                DataTable dt = dalLOC.dbo_PR_LOC_State_SelectByPK(StateID);
+				TempData["Action"] = "Edit";
+				DataTable dt = dalLOC.dbo_PR_LOC_State_SelectByPK(StateID);
 
                 LOC_StateModel modelLOC_State = new LOC_StateModel();
 
