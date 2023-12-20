@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Data;
 using System.Net.Mail;
 using AddEditMetronic8.Areas.SEC_User.Models;
+using AddEditMetronic8.BAL;
 
 namespace AddEditMetronic8.DAL
 {
@@ -80,7 +81,25 @@ namespace AddEditMetronic8.DAL
 				return null;
 			}
 		}
-		#endregion
+        #endregion
 
-	}
+        #region Function: dbo_PR_SEC_User_UpdatePWD
+        public bool? dbo_PR_SEC_User_UpdatePWD(SEC_UserModel modelSEC_User)
+        {
+            try
+            {
+                SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
+                DbCommand dbCMD = sqlDB.GetStoredProcCommand("PR_SEC_User_UpdatePWD");
+                sqlDB.AddInParameter(dbCMD, "@Password", SqlDbType.NVarChar, modelSEC_User.Password); // This should be the hashed password
+                sqlDB.AddInParameter(dbCMD, "UserID", SqlDbType.Int,CV.UserID());
+                int result = sqlDB.ExecuteNonQuery(dbCMD);
+                return (result == -1 ? false : true);
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
+    }
 }

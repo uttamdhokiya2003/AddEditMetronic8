@@ -52,6 +52,21 @@ namespace AddEditMetronic8.BAL
             }
             return Email;
         }
-		#endregion
-	}
+        #endregion
+
+        #region Password
+        public static string? Password()
+        {
+            string? Password = null;
+
+            if(_httpContextAccessor.HttpContext.Session.GetString("Password") != null)
+            {
+                Password = _httpContextAccessor.HttpContext.Session.GetString("Password").ToString();
+            }
+            return Password;
+        }
+        #endregion
+
+
+    }
 }

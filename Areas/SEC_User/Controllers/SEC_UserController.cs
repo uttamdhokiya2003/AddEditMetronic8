@@ -74,13 +74,31 @@ namespace AddEditMetronic8.Areas.SEC_User.Controllers
 			return RedirectToAction("Index");
 		}
         #endregion
-
-		public IActionResult SignUp()
+		
+		#region Logout
+		public IActionResult Logout()
 		{
-			return View();
+			HttpContext.Session.Clear();
+			return RedirectToAction("Index");
 		}
-		#region Function: Signup Save
-		[HttpPost]
+        #endregion
+
+        #region SignUp
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+        #endregion
+
+        #region ChangePWD
+        public IActionResult ChangePWD()
+        {
+            return View("ChangePassword");
+        }
+        #endregion
+
+        #region Function: Signup Save
+        [HttpPost]
 		public IActionResult SignUpSave(SEC_UserModel modelSEC_User)
 		{
 			//string hashedPassword = HashPassword(modelSEC_User.Password); // Hash the password
@@ -100,11 +118,12 @@ namespace AddEditMetronic8.Areas.SEC_User.Controllers
 		}
 		#endregion
 
-		#region Logout
-		public IActionResult Logout()
+
+        #region SavePWD
+		public IActionResult SavePWD() 
 		{
-			HttpContext.Session.Clear();
-			return RedirectToAction("Index");
+
+			return View("ChangePassword");
 		}
         #endregion
     }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace MetronicAddressBook.BAL
+namespace AddEditMetronic8.BAL
 {
     public class CheckAccess : ActionFilterAttribute, IAuthorizationFilter
     {

@@ -109,12 +109,12 @@
                                             <!--end::Name=-->
                                             <!--begin::Email=-->
                                             <td class="text-center">
-                                                <a asp-area="LOC_State" asp-controller="LOC_State" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr.CountryID))"><h1 class="badge badge-light-success badge-circle fw-normal fs-6">@dr.StateCount</h1></a>
+                                            <a asp-area="LOC_State" asp-controller="LOC_State" asp-action="Index" asp-route-CountryID="@(Convert.ToInt32(dr.CountryID))"><h1 class="badge badge-light-success badge-circle fw-normal fs-6">@dr.StateCount</h1></a>
                                             </td>
                                             <!--end::Email=-->
                                             <!--begin::Status=-->
                                             <td class="text-center">
-                                                <a asp-area="LOC_City" asp-controller="LOC_City" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr.CountryID))"><h1 class="badge badge-light-success badge-circle fw-normal fs-6">@dr.CityCount</h1></a>
+                                            <a asp-area="LOC_City" asp-controller="LOC_City" asp-action="Index" asp-route-CountryID="@(Convert.ToInt32(dr.CountryID))"><h1 class="badge badge-light-success badge-circle fw-normal fs-6">@dr.CityCount</h1></a>
                                             </td>
                                             <!--end::Status=-->
                                             <!--begin::IP Address=-->
